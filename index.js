@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
-console.log("present!")
+const {Circle, Square, Triangle} = require('./lib/shapes');
 
 inquirer.prompt([
     {
@@ -12,12 +11,12 @@ inquirer.prompt([
     {
         type: 'input',
         message: "please choose your logo's text color",
-        name: 'textColors',
+        name: 'textColor',
     },
     {
         type: 'input',
         message: "please choose your logo's shape's color",
-        name: 'shapeColors',
+        name: 'shapeColor',
     },
     {
         type: 'list',
@@ -27,3 +26,21 @@ inquirer.prompt([
     },
 ]
 )
+
+.then((data) => {
+    const {characters, textColor, shape, shapeColor} = data;
+    switch (shape){
+        case "circle":
+            generateLogo = new Circle(shapeColor, textColor, characters);
+            break;
+        case "square":
+            generateLogo = new Square(shapeColor, textColor, characters);
+            break;
+        case "triangle":
+            generateLogo = new Triangle(shapeColor, textColor, characters);
+            break;
+        case "heart":
+            generateLogo = new Heart(shapeColor, textColor, characters);    
+    }
+    fs.writeFileSync('./examples/logo.svg', svgInstance.render());
+    });
