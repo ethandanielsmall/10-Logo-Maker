@@ -10,16 +10,20 @@ inquirer.prompt([
         name: 'characters'
     },
     {
-        type: 'list',
-        message: "please choose your logo's color",
-        name: 'colors',
-        choices: ['pink', 'green', 'cream']
+        type: 'input',
+        message: "please choose your logo's text color",
+        name: 'textColors',
+    },
+    {
+        type: 'input',
+        message: "please choose your logo's shape's color",
+        name: 'shapeColors',
     },
     {
         type: 'list',
         message: "please choose your logo's shape",
         name: 'shape',
-        choices: ['circle', 'square', 'heart']
+        choices: ['circle', 'square', 'triangle', 'heart']
     },
 ]
 )

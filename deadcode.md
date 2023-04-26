@@ -1,7 +1,3 @@
-WHEN I am prompted for text
-THEN I can enter up to three characters
-
-
 WHEN I am prompted for the text color
 THEN I can enter a color keyword (OR a hexadecimal number)
 
