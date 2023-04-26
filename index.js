@@ -22,7 +22,7 @@ inquirer.prompt([
         type: 'list',
         message: "please choose your logo's shape",
         name: 'shape',
-        choices: ['circle', 'square', 'triangle', 'heart']
+        choices: ['circle', 'square', 'triangle']
     },
 ]
 )
@@ -37,10 +37,7 @@ inquirer.prompt([
             generateLogo = new Square(shapeColor, textColor, characters);
             break;
         case "triangle":
-            generateLogo = new Triangle(shapeColor, textColor, characters);
-            break;
-        case "heart":
-            generateLogo = new Heart(shapeColor, textColor, characters);    
+            generateLogo = new Triangle(shapeColor, textColor, characters);   
     }
-    fs.writeFileSync('./examples/logo.svg', svgInstance.render());
+    fs.writeFileSync('./examples/logo.svg', generateLogo.render());
     });
