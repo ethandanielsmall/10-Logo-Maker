@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const {Circle, Square, Triangle} = require('./lib/shapes');
 
+
 inquirer.prompt([
     {
         type: 'input',
@@ -28,16 +29,18 @@ inquirer.prompt([
 )
 
 .then((data) => {
-    const {characters, textColor, shape, shapeColor} = data;
+    const {characters, textColor, shapeColor, shape} = data;
+    var svgInstance;
     switch (shape){
         case "circle":
-            generateLogo = new Circle(shapeColor, textColor, characters);
+            svgInstance = new Circle(characters, textColor, shapeColor);
             break;
         case "square":
-            generateLogo = new Square(shapeColor, textColor, characters);
+            svgInstance = new Square(characters, textColor, shapeColor);
             break;
         case "triangle":
-            generateLogo = new Triangle(shapeColor, textColor, characters);   
+            svgInstance = new Triangle(characters, textColor, shapeColor);   
     }
-    fs.writeFileSync('./examples/logo.svg', generateLogo.render());
+    
+    fs.writeFileSync('./examples/logo.svg', svgInstance.render());
     });
