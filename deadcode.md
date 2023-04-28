@@ -17,3 +17,10 @@ AND the output text "Generated logo.svg" is printed in the command line
 
 WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
+
+pseudo code
+- make a js file that houses shapes and generates instructions for shapes (using sv g?)
+- make a js file that takes in instructions and spits out fs write file
+- make a readme
+- make a place to actually put the svg file in an examples foler
+- gitignore!!!!!!! for the Annoying
