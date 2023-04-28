@@ -42,5 +42,5 @@ inquirer.prompt([
             svgInstance = new Triangle(characters, textColor, shapeColor);   
     }
     
-    fs.writeFileSync('./examples/logo.svg', svgInstance.render());
+    fs.writeFileSync(`./examples/${characters}-logo.svg`, svgInstance.render());
     });
